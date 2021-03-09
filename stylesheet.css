@@ -1,0 +1,164 @@
+body{
+  font-family:Sans-serif;
+}
+#banner {
+  text-align:center;
+  padding:0.1em;
+}
+#menu {
+  overflow: hidden;
+  background-color: DarkCyan;
+  border-bottom:0.2em solid MediumAquaMarine;
+}
+#menu a {
+  float: left;
+  display: block;
+  color: Azure;
+  font-weight:bold;
+  text-align: center;
+  padding: 0.5em 2em;
+  text-decoration: none;
+}
+#menu a:hover {
+  background-color: Azure;
+  color: Black;
+}
+#content .info {
+  clear:both;
+}
+#content .givemespaceplease {
+   height:1em;
+   clear:both;
+}
+#content .quart {
+  width:25%;
+  float:left;
+}
+#content .twtfi {
+  width:4.16%;
+  float:left;
+}
+#content .twtfi h3, #content .twtfi h4 {
+  text-align:center;
+
+}
+#content [class*="connect"] {
+  margin:0.5em;
+  height:1.5em;
+  text-align:center;
+}
+#content [class*="connect"] a {
+  text-decoration: none;
+  color:Black;
+  width:50%;
+  display:inline-block;
+}
+#content .connected {
+  border:0.4em solid MediumAquaMarine;
+  background-color: Azure;
+}
+#content .connected a {
+  border-top:0.4em solid MediumAquaMarine;
+}
+#content .notconnect {
+  border:0.4em solid Grey;
+  background-color:LightGrey;
+}
+#content .notconnect a{
+  border-top:0.4em solid Grey;
+}
+
+#content [class^="p"] {
+  margin:0.5em;
+  text-align:center;
+  height:5em;
+  font-family:monospace;
+  font-size:x-large;
+}
+#content [class^="p"] div {
+  width:100%;
+  animation-duration: 1.5s;
+  background-color:Azure;
+}
+
+#content .p0 { background-color:LightBlue; }
+#content .p1 { background-color:LightBlue; }
+#content .p2 { background-color:LightBlue; }
+#content .p3 { background-color:MediumAquaMarine; }
+#content .p4 { background-color:MediumAquaMarine; }
+#content .p5 { background-color:MediumAquaMarine; }
+#content .p6 { background-color:MediumAquaMarine; }
+#content .p7 { background-color:DarkKhaki; }
+#content .p8 { background-color:DarkKhaki; }
+#content .p9 { background-color:IndianRed; }
+#content .p10 { background-color:IndianRed; }
+
+
+#content .p0 div { height:100%; }
+#content .p1 div { height:90%; animation-name:a90; }
+#content .p2 div { height:80%; animation-name:a80; }
+#content .p3 div { height:70%; animation-name:a70; }
+#content .p4 div { height:60%; animation-name:a60; }
+#content .p5 div { height:50%; animation-name:a50; }
+#content .p6 div { height:40%; animation-name:a40; }
+#content .p7 div { height:30%; animation-name:a30; }
+#content .p8 div { height:20%; animation-name:a20; }
+#content .p9 div { height:10%; animation-name:a10; }
+#content .p10 div { height:0%; animation-name:a0; }
+
+
+#content [class^="b"] {
+  margin:0.5em;
+  text-align:center;
+  height:5em;
+  font-family:monospace;
+  font-size:x-large;
+  animation-duration: 1.5s;
+}
+#content [class^="b"] div {
+  padding-top:1.75em;
+}
+#content .bOK {
+  background-color:MediumAquaMarine;
+  animation-name:aOK;
+}
+#content .bBad {
+  background-color:IndianRed;
+  animation-name:aBad;
+}
+
+@keyframes a90 { from {height:100%} to {height:90%} }
+@keyframes a80 { from {height:100%} to {height:80%} }
+@keyframes a70 { from {height:100%} to {height:70%} }
+@keyframes a60 { from {height:100%} to {height:60%} }
+@keyframes a50 { from {height:100%} to {height:50%} }
+@keyframes a40 { from {height:100%} to {height:40%} }
+@keyframes a30 { from {height:100%} to {height:30%} }
+@keyframes a20 { from {height:100%} to {height:20%} }
+@keyframes a10 { from {height:100%} to {height:10%} }
+@keyframes a0 { from {height:100%} to {height:0%} }
+
+@keyframes aOK { from {background-color: Azure;} to {background-color: MediumAquaMarine;} }
+@keyframes aBad { from {background-color:Azure} to {background-color:IndianRed} }
+
+#content .text {
+  font-family: monospace;
+  white-space: pre;
+  border:0.4em solid MediumAquaMarine;
+  padding:0.4em;
+}
+
+
+@media only screen and (max-width: 1200px) {
+  #content .twtfi { width:6.25%; }
+}
+@media only screen and (max-width: 800px) {
+  body { font-size:large; }
+  #content .quart { width:50%; }
+  #content .twtfi { width:8.33%; }
+}
+@media only screen and (max-width: 600px) {
+  body {
+    font-size:x-large;
+  }
+}
