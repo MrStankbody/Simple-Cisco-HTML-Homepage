@@ -1,91 +1,118 @@
 body{
   font-family:Sans-serif;
 }
+h2, h3 {
+ margin-block:0;
+ margin:0.5em;
+}
+h4 {
+ margin-block:0;
+ margin: 0.25em;
+}
 #banner {
   text-align:center;
   padding:0.1em;
 }
 #menu {
-  overflow: hidden;
+  display:flex;
+  flex-wrap: wrap;
   background-color: DarkCyan;
-  border-bottom:0.2em solid MediumAquaMarine;
+  border-bottom:0.25em solid MediumAquaMarine;
 }
 #menu a {
-  float: left;
-  display: block;
   color: Azure;
   font-weight:bold;
-  text-align: center;
-  padding: 0.5em 2em;
+  padding: 0.5em 3em;
   text-decoration: none;
+  text-align:center;
 }
 #menu a:hover {
   background-color: Azure;
   color: Black;
 }
-#content .info {
-  clear:both;
+.table {
+  display: flex;
+  flex-wrap: wrap;
+  /*border: 1px solid black;*/
 }
-#content .givemespaceplease {
-   height:1em;
-   clear:both;
+.cell {
+  text-align: center;
+  font-family: monospace;
+  font-size: large;
+  margin:0 0.25em;
+  animation-duration: 1.5s;
 }
-#content .quart {
-  width:25%;
-  float:left;
+
+.info {
+  height:5em;
+ flex-grow:1;
 }
-#content .twtfi {
-  width:4.16%;
-  float:left;
+.info div {
+  height:0%;
+  background-color: Azure;
+  animation-duration:inherit;
+  font-weight:bold;
 }
-#content .twtfi h3, #content .twtfi h4 {
-  text-align:center;
+
+.jack {
+  margin:0 auto;
+  width:3em;
+  margin-bottom:1em;
 
 }
-#content [class*="connect"] {
-  margin:0.5em;
-  height:1.5em;
-  text-align:center;
-}
-#content [class*="connect"] a {
+.jack a {
   text-decoration: none;
   color:Black;
   width:50%;
-  display:inline-block;
 }
-#content .connected {
+.jack .lights {
+  border-left:0.8em solid Grey;
+  border-right:0.8em solid Grey;
+  height:0.4em;
+}
+.connected {
   border:0.4em solid MediumAquaMarine;
   background-color: Azure;
 }
-#content .connected a {
-  border-top:0.4em solid MediumAquaMarine;
+
+.connected .lights {
+  border-left-color:DarkSeaGreen;
+  border-right-color:GoldenRod;
+  height:0.4em;
 }
-#content .notconnect {
+.notconnect {
   border:0.4em solid Grey;
   background-color:LightGrey;
 }
-#content .notconnect a{
-  border-top:0.4em solid Grey;
-}
 
-#content [class^="p"] {
-  margin:0.5em;
-  text-align:center;
+.bar {
+  display:flex;
+  justify-content: center;
   height:5em;
-  font-family:monospace;
-  font-size:x-large;
+  animation-duration:inherit;
 }
-#content [class^="p"] div {
-  width:100%;
-  animation-duration: 1.5s;
-  background-color:Azure;
+.bar div {
+  width:2em;
+  animation-duration:inherit;
+  background-color: Azure;
 }
 
-#content .p0 { background-color:LightBlue; }
+.textTable{
+  font-family: monospace;
+}
+
+.text {
+  font-family: monospace;
+  white-space: pre;
+  border:0.4em solid MediumAquaMarine;
+  padding:0.4em;
+}
+
+#content .p0 {background-color:LightBlue;}
 #content .p1 { background-color:LightBlue; }
 #content .p2 { background-color:LightBlue; }
 #content .p3 { background-color:MediumAquaMarine; }
-#content .p4 { background-color:MediumAquaMarine; }
+#content .p4 {background-color:MediumAquaMarine;}
 #content .p5 { background-color:MediumAquaMarine; }
 #content .p6 { background-color:MediumAquaMarine; }
 #content .p7 { background-color:DarkKhaki; }
@@ -94,43 +121,36 @@ body{
 #content .p10 { background-color:IndianRed; }
 
 
-#content .p0 div { height:100%; }
+#content .p0 div {height:100%;}
 #content .p1 div { height:90%; animation-name:a90; }
-#content .p2 div { height:80%; animation-name:a80; }
+#content .p2 div { height:80%; animation-name:a80;}
 #content .p3 div { height:70%; animation-name:a70; }
-#content .p4 div { height:60%; animation-name:a60; }
+#content .p4 div { height:60%; animation-name:a60;}
 #content .p5 div { height:50%; animation-name:a50; }
 #content .p6 div { height:40%; animation-name:a40; }
 #content .p7 div { height:30%; animation-name:a30; }
-#content .p8 div { height:20%; animation-name:a20; }
+#content .p8 div { height:20%; animation-name:a20;}
 #content .p9 div { height:10%; animation-name:a10; }
 #content .p10 div { height:0%; animation-name:a0; }
 
 
-#content [class^="b"] {
-  margin:0.5em;
-  text-align:center;
-  height:5em;
-  font-family:monospace;
-  font-size:x-large;
-  animation-duration: 1.5s;
-}
-#content [class^="b"] div {
-  padding-top:1.75em;
-}
-#content .bOK {
-  background-color:MediumAquaMarine;
-  animation-name:aOK;
-}
-#content .bBad {
-  background-color:IndianRed;
-  animation-name:aBad;
-}
+#content .b0 { background-color:IndianRed; animation-name:a1; }
+#content .b1 { background-color:IndianRed; animation-name:a1; }
+#content .b2 {background-color:DarkKhaki;animation-name:a2;}
+#content .b3 { background-color:DarkKhaki; animation-name:a2; }
+#content .b4 { background-color:MediumAquaMarine; animation-name:a4; }
+#content .b5 { background-color:MediumAquaMarine; animation-name:a4; }
+#content .b6 { background-color:MediumAquaMarine; animation-name:a4; }
+#content .b7 { background-color:MediumAquaMarine; animation-name:a4; }
+#content .b8 {background-color:LightBlue;animation-name:a8;}
+#content .b9 { background-color:LightBlue;  animation-name:a8; }
+#content .b10 { background-color:LightBlue;  animation-name:a8; }
+
 
 @keyframes a90 { from {height:100%} to {height:90%} }
 @keyframes a80 { from {height:100%} to {height:80%} }
 @keyframes a70 { from {height:100%} to {height:70%} }
-@keyframes a60 { from {height:100%} to {height:60%} }
+@keyframes a60 { from {height:100%;} to {height:60%;} }
 @keyframes a50 { from {height:100%} to {height:50%} }
 @keyframes a40 { from {height:100%} to {height:40%} }
 @keyframes a30 { from {height:100%} to {height:30%} }
@@ -138,27 +158,7 @@ body{
 @keyframes a10 { from {height:100%} to {height:10%} }
 @keyframes a0 { from {height:100%} to {height:0%} }
 
-@keyframes aOK { from {background-color: Azure;} to {background-color: MediumAquaMarine;} }
-@keyframes aBad { from {background-color:Azure} to {background-color:IndianRed} }
-
-#content .text {
-  font-family: monospace;
-  white-space: pre;
-  border:0.4em solid MediumAquaMarine;
-  padding:0.4em;
-}
-
-
-@media only screen and (max-width: 1200px) {
-  #content .twtfi { width:6.25%; }
-}
-@media only screen and (max-width: 800px) {
-  body { font-size:large; }
-  #content .quart { width:50%; }
-  #content .twtfi { width:8.33%; }
-}
-@media only screen and (max-width: 600px) {
-  body {
-    font-size:x-large;
-  }
-}
+@keyframes a8 { from {background-color: Azure;} to {background-color: LightBlue;} }
+@keyframes a4 { from {background-color: Azure;} to {background-color: MediumAquaMarine;} }
+@keyframes a2 { from {background-color: Azure;} to {background-color: DarkKhaki;} }
+@keyframes a1 { from {background-color: Azure} to {background-color:IndianRed} }

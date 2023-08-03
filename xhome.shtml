@@ -4,9 +4,13 @@
 	<head>
 		<link rel='stylesheet' href='stylesheet.css' type='text/css'>
 		<script language='JavaScript'>
+            versLines = `<!--#exec cmd='show version | include (\*|uptime)'-->`
+            vlanLine = `<!--#exec cmd='show int vlan 1 | include Internet'-->`
 		    cpuLine = `<!--#exec cmd='show process | include CPU'-->`
 		    memLine = `<!--#exec cmd='show process mem | include ^Proc'-->`
-            sysLines = `<!--#exec cmd='show env all | include ^(FAN|Temperature Value)'-->`
+            fanLines = `<!--#exec cmd='show env all | include FAN'-->`
+            powerLines = `<!--#exec cmd='show env power | include [0-9]'-->`
+            tempLine = `<!--#exec cmd='show env all | include Temperature Value'-->`
             portLines = `<!--#exec cmd='show int status'-->`
 			deviceLines = `<!--#exec cmd='show ip device tracking all | include ACTIVE'-->`;
 			statLines = `<!--#exec cmd='show int summary'-->`
@@ -14,12 +18,10 @@
 			configLines = `<!--#exec cmd='show run'-->`
 		</script>
 		<script language='JavaScript' src='script.js'></script>
-		<title>Switch Name - IP address - Up Time</title>
 	</head>
 <body onload='Setup();'>
 
-<div id='banner'><h1>Switch Name - IP address - Up Time -
-	<a href='#reload'>Reload</a></h1>
+<div id='banner'><h1 id='stats'> - <a href='.'>Reload</a></h1>
 </div>
 
 <div id='menu'>
@@ -31,47 +33,23 @@
 </div>
 
 <div id='content'>
-	
-	<div class='info'><h2><a id='system'>System</a></h2>
-		<div class='quart'><h3>CPU Usage</h3>
-		    <div id='cpuUsage'><div id='cpuUsageText'></div></div>
-		</div>
-		<div class='quart'><h3>Memory Usage</h3>
-		    <div id='memUsage'><div id='memUsageText'></div></div>
-		</div>
-		<div class='quart'><h3>Fan Status</h3>
-		    <div id='fanStatus'><div id='fanStatusText'></div></div>
-		</div>
-		<div class='quart'><h3>Temperature</h3>
-		    <div id='temperature'><div id='temperatureText'></div></div>
-		</div>
-	</div>
+	<h2><a id='system'>System</a></h2>
+    <div id='infoTable' class='table'></div>
 
-	<div class='info'><h2><a id='ports'>Ports</a></h2>
-	    <h3>Status</h3>
-        <div id='portStatus'></div>
-		<div class='givemespaceplease'></div>
-	    <h3>Utilization</h3>
-	    <div id='portUtilization'></div>
-	</div>
-	<div class='givemespaceplease'></div>
-	<div class='info'><h2><a id='devices'>Devices</a></h2>
-    	<div id='deviceTable'>
-		</div>
-	</div>
+    <h2><a id='ports'>Ports</a></h2>
+	<div id='portTable' class='table'></div>
 
-	
-	<div class='info'><h2><a id='logs'>Logs</a></h2>
-        <div id='logTable'  class='text'></div>
-	</div>
+    <h2><a id='devices'>Decives</a></h2>
+	<div id='deviceTable'></div>
 
-	
-	<div class='info'><h2><a id='config'>Config</a></h2>
-	    <div id='configTable' class='text'></div>
-	</div>
+	<h2><a id='logs'>Logs</a></h2>
+    <div id='logTable' class='text'></div>
+
+	<h2><a id='config'>Config</a></h2>
+	<div id='configTable' class='text'></div>
+
+ 
 </div>
 
-<div></div>
 </body>
 </html>
-
